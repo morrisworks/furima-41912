@@ -28,9 +28,9 @@
 | Column		| Type		| Options    	|
 | ------ 		| -----		| ----------	|
 | item_name		| string	| null: false	|
-| item_info_id		| integer	| null: false	|
+| item_info		| text		| null: false	|
 | item_category_id	| integer	| null: false	|
-| item_sales_status	| integer	| null: false	|
+| item_sales_status_id| integer	| null: false	|
 | item_shipping_fee_status_id| integer| null: false|
 | prefecture_id	| integer	| null: false	|
 | item_scheduled_delivery_id| integer| null: false	|
@@ -42,11 +42,7 @@
 
 - has_one :order
 - belongs_to :user
-- belongs_to :item_info
-- belongs_to :item_category
-- belongs_to :item_shipping_fee_status
-- belongs_to :prefecture
-- belongs_to :item_scheduled_delivery
+
 
 ---
 ## shipping_addresses テーブル
@@ -65,7 +61,6 @@
 ### Association
 
 - belongs_to :order
-- belongs_to :prefecture
 
 
 ---
