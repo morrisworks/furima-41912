@@ -2,8 +2,8 @@ FactoryBot.define do
   password_generator = -> {
     loop do
       password = Faker::Internet.password(min_length: 6)
-      # 英字と数字が両方含まれているかを正規表現でチェック
-      if password.match(/(?=.*[a-zA-Z])(?=.*[0-9])/)
+      # 英字と数字で構成されているかを正規表現でチェック
+      if password.match(/\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i)
         break password
       end
     end
