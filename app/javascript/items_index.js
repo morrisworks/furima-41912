@@ -2,8 +2,6 @@ const priceInput = document.getElementById("item-price");
 const add_tax_price = document.getElementById("add-tax-price");
 const profit = document.getElementById("profit");
 
-
-
 // 入力が変わるたびに計算するイベントを追加
 priceInput.addEventListener("input", () => {
   const price = parseFloat(priceInput.value);  // 数値に変換
