@@ -22,3 +22,8 @@ priceInput.addEventListener("input", () => {
     profit.textContent ="0";  
   }
 });
+
+// ページが完全に読み込まれたときにprice関数を実行
+window.addEventListener("turbo:load", price);
+// ページの中身が書き換えられたときにprice関数を実行
+window.addEventListener("turbo:render", price);
