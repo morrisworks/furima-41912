@@ -8,6 +8,7 @@ class Item < ApplicationRecord
 
   has_one_attached :item_image
   belongs_to :user
+  has_one :order
 
   # 空の投稿を保存できないようにする
   validates :item_name, :item_info, :item_image, :item_price, presence: true
