@@ -132,7 +132,7 @@
       <li class='list'>
         <%= link_to item_path(i) do %>
         <div class='item-img-content'>
-        <%= image_tag i.item_image.variant(resize: '296x296'), class: 'message-image' %>
+        <%= image_tag i.item_image, class: "item-img" %>
 
           <%# 商品が売れていればsold outを表示しましょう %>
         <% if i.present? %>
