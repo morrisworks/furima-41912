@@ -8,10 +8,12 @@ class OrderAddress
     :building,
     :phone_number,
     :user_id,
-    :item_id
+    :item_id,
+    :token
   )
 
   with_options presence: true do
+    validates :token
     validates :city
     validates :address
     validates :user_id
