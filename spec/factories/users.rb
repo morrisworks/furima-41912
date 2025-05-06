@@ -14,7 +14,6 @@ FactoryBot.define do
     email                 {Faker::Internet.email}
     password              {password_generator.call}
     password_confirmation {password}
-
     last_name             {Faker::Japanese::Name.last_name}
     first_name            {Faker::Japanese::Name.first_name}
     last_name_kana        {Faker::Japanese::Name.last_name.yomi}
