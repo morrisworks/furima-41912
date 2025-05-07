@@ -63,5 +63,10 @@ class ItemsController < ApplicationController
     unless current_user.id == @item.user.id
       redirect_to action: :index
     end
+
+        # 出品者であっても商品が売却済みであれば編集させない
+    if @item.order.present?
+      redirect_to root_path
+    end
   end
 end
