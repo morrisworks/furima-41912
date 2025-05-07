@@ -19,7 +19,7 @@ FactoryBot.define do
     address          {Faker::Address.street_address}
     building         {Faker::Address.building_number}
     phone_number     {phone_number_generator.call}
-    token            {"tok_abcdefghijk00000000000000000"}
+    token            {Faker::Alphanumeric.alphanumeric(number: 32)}
 
   end
 end
