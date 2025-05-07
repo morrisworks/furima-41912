@@ -33,14 +33,14 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address.errors.full_messages).to include("Postal code can't be blank")
       end
 
-      it 'postal_codeがハイフンを含まないと保存できないこと' do
+      it 'postal_codeが「3桁ハイフン4桁」でないと保存できないこと' do
         @order_address.postal_code = '1234567'
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include('Postal code is invalid. Include hyphen(-)')
       end
 
-      it 'prefectureを選択していないと保存できないこと' do
-        @order_address.prefecture_id = 1  # ← 通常、1が未選択扱い
+      it 'prefectureが空だと保存できないこと' do
+        @order_address.prefecture_id = 1  # 1が未選択扱い
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Prefecture can't be blank")
       end

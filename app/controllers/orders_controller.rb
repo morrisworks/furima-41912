@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item
+  before_action :move_to_index, only: [:index, :create]
+
 
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
@@ -39,4 +41,10 @@ class OrdersController < ApplicationController
     )
   end
   
+  def move_to_index
+    if current_user.id == @item.user.id || @item.order.present?
+      redirect_to root_path
+    end
+  end
+
 end
